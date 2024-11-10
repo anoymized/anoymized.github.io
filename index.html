@@ -153,35 +153,34 @@
   .scaled-video {
     width: 70vw; /* 占据视口宽度的 70% */
     height: 70vh; /* 占据视口高度的 70% */
-    object-fit: contain; /* 保持视频比例填充容器 */
+    object-fit: contain; /* 保持视频内容完整 */
     display: block; /* 使视频为块级元素，以便居中 */
     margin: 0 auto; /* 水平居中对齐 */
+    position: relative; /* 设置相对定位，为字幕提供参考 */
   }
   .overlay-text {
-    text-align: center;
+    position: absolute; /* 绝对定位使文本浮动在视频上 */
+    bottom: 10px; /* 将文本定位到距离视频底部 10px */
+    left: 50%; /* 水平居中 */
+    transform: translateX(-50%); /* 调整位置使其真正居中 */
     color: white;
     background: rgba(0, 0, 0, 0.5);
-    padding: 10px;
+    padding: 5px 10px; /* 调整内边距，使字幕更紧凑 */
     border-radius: 5px;
-    max-width: 80%; /* 控制文字区域的最大宽度 */
-    margin: 10px auto 0; /* 居中对齐并在顶部留间距 */
+    max-width: 90%; /* 控制字幕宽度，确保不会超出视频边缘 */
+    text-align: center;
   }
 </style>
 
-<!-- Teaser 主视频展示 -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- 主视频展示 -->
-     <video id="teaser" autoplay muted loop playsinline class="scaled-video">
-        <source src="./static/5_Spring_AllOs.mp4" type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-       <span class="dnerf">HuPerFlow</span> collects and analyzes extensive human-perceived optical flow data across multiple established optical flow benchmarks. The video above demonstrates examples from the <a href="https://spring-benchmark.org/">Spring Benchmark</a>. In many cases, human perception of motion (shown by red arrows) differs from the ground truth (blue arrows), with the discrepancy represented by the endpoint error (size of the green circles).
 
-      </h2>
-    </div>
-  </div>
+  <!-- Teaser 主视频展示 -->
+<section class="hero teaser">
+  <video id="teaser" autoplay muted loop playsinline class="scaled-video">
+    <source src="./static/5_Spring_AllOs.mp4" type="video/mp4">
+  </video>
+  <h2 class="subtitle has-text-centered overlay-text">
+     <span class="dnerf">HuPerFlow</span> collects and analyzes extensive human-perceived optical flow data across multiple established optical flow benchmarks. The video above demonstrates examples from the <a href="https://spring-benchmark.org/">Spring Benchmark</a>. In many cases, human perception of motion (shown by red arrows) differs from the ground truth (blue arrows), with the discrepancy represented by the endpoint error (size of the green circles).
+  </h2>
 </section>
 
 
