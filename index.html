@@ -78,7 +78,6 @@
     </div>
   </div>
 </nav>
-
 <!-- 标题和作者信息部分 -->
 <section class="hero">
   <div class="hero-body">
@@ -102,15 +101,15 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- 论文链接 -->
+              <!-- 论文链接，点击时弹出提示 -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948" class="external-link button is-normal is-rounded is-dark">
+                <a href="javascript:void(0);" onclick="showAlert()" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper</span>
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948" class="external-link button is-normal is-rounded is-dark">
+                <a href="javascript:void(0);" onclick="showAlert()" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="ai ai-arxiv"></i></span>
                   <span>arXiv</span>
                 </a>
@@ -135,7 +134,6 @@
                   <span class="icon"><i class="far fa-images"></i></span>
                   <span>Data</span>
                 </a>
-              </span>
             </div>
           </div>
         </div>
@@ -150,6 +148,7 @@
     alert("Not available in anonymous mode. All data/code/benchmark will be open once the paper gets accepted.");
   }
 </script>
+
 
 
 <!-- Teaser 视频展示 -->
