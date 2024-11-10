@@ -78,6 +78,7 @@
     </div>
   </div>
 </nav>
+  
 <!-- 标题和作者信息部分 -->
 <section class="hero">
   <div class="hero-body">
@@ -85,7 +86,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <!-- 主要标题，页面显示的标题，可自定义 -->
-          <h1 class="title is-1 publication-title">HuPerFlow: A Comprehensive Benchmark for Human vs. Machine Motion Estimation</h1>
+          <h1 class="title is-1 publication-title colorful-title">HuPerFlow: A Comprehensive Benchmark for Human vs. Machine Motion Estimation</h1>
           <div class="is-size-5 publication-authors">
             <!-- 作者名和链接，可修改成实际作者信息 -->
             <span class="author-block">
@@ -141,6 +142,35 @@
     </div>
   </div>
 </section>
+
+<style>
+  /* 标题居中对齐 */
+  .colorful-title {
+    text-align: center;
+    font-size: 2.5em; /* 根据需要调整字体大小 */
+  }
+
+  /* 为不同颜色定义类 */
+  .word-color-1 { color: #ff5733; }
+  .word-color-2 { color: #33c1ff; }
+  .word-color-3 { color: #9b33ff; }
+  .word-color-4 { color: #33ff57; }
+  .word-color-5 { color: #ffd433; }
+  .word-color-6 { color: #ff33a6; }
+</style>
+
+<script>
+  // JavaScript代码：将标题的每个单词分配随机颜色
+  document.addEventListener("DOMContentLoaded", function() {
+    const title = document.querySelector(".colorful-title");
+    const words = title.innerText.split(" ");
+    title.innerHTML = words.map((word, index) => {
+      const colorClass = `word-color-${(index % 6) + 1}`; // 分配颜色类
+      return `<span class="${colorClass}">${word}</span>`;
+    }).join(" ");
+  });
+</script>
+
 
 <!-- JavaScript，用于显示提示信息 -->
 <script>
