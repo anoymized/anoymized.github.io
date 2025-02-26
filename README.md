@@ -1,1 +1,1 @@
-The project of HuperFlow, created by Zitang 2024
+The project of HuperFlow
